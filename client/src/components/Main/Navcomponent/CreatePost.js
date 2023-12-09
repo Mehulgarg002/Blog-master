@@ -17,7 +17,7 @@ const CreatePost = () => {
   const id = localStorage.getItem('userId')
   const SubmitHandler = async () => {
     try {
-      const url = `http://localhost:4000/api/userpost`;
+      const url = `https://blogpost-yu02.onrender.com/api/userpost`;
       await axios.post(url, values);
     } catch (error) {
       console.log(error);

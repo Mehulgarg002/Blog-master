@@ -1,7 +1,100 @@
+// import { useState } from "react";
+// import axios from "axios";
+// import { Link } from "react-router-dom";
+// import styles from "./styles.module.css";
+
+// const Login = () => {
+// 	const [data, setData] = useState({ email: "", password: "" });
+// 	const [error, setError] = useState("");
+
+// 	const handleChange = ({ currentTarget: input }) => {
+// 		setData({ ...data, [input.name]: input.value });
+// 	};
+
+// 	const handleSubmit = async (e) => {
+// 		e.preventDefault();
+// 		try {
+// 			const url = `https://blogpost-yu02.onrender.com/api/auth`;
+// 			const { data: res } = await axios.post(url, data);
+// 			localStorage.setItem("userId", res.data._id);
+// 			localStorage.setItem("token", res.data.token);
+// 			window.location = "/";
+// 		} catch (error) {
+// 			if (
+// 				error.response &&
+// 				error.response.status >= 400 &&
+// 				error.response.status <= 500
+// 			) {
+// 				setError(error.response.data.message);
+// 			}
+// 		}
+// 	};
+
+// 	return (
+// 		<section className="text-center text-lg-start">
+// 			<div className="container py-4">
+// 				<div className="row g-0 align-items-center">
+// 					<div className="col-lg-6 mb-5 mb-lg-0">
+// 						<div className="card cascading-right" style={{
+// 							background: "hsla(0, 0%, 100%, 0.55)",
+// 							backdropFilter: 'blur(30px)'
+// 						}}>
+// 							<div className="card-body p-5 shadow-5 text-center">
+// 								<h2 className="fw-bold mb-5">Sign up now</h2>
+// 								<form onSubmit={handleSubmit}>
+// 									<div className="form-outline mb-4">
+// 										<input
+// 											type="email"
+// 											placeholder="Email"
+// 											name="email"
+// 											onChange={handleChange}
+// 											value={data.email}
+// 											required
+// 										/>
+// 									</div>
+
+// 									<div className="form-outline mb-4">
+// 										<input
+// 											type="password"
+// 											placeholder="Password"
+// 											name="password"
+// 											onChange={handleChange}
+// 											value={data.password}
+// 											required
+// 										/>
+// 									</div>
+// 									<button type="submit" className="btn btn-primary btn-block mb-4">
+// 										Sign In
+// 									</button>
+// 									{error && <div className={styles.error_msg}>{error}</div>}
+// 									<div className="text-center">
+// 										<h1>New Here ?</h1>
+// 										<Link to="/signup">
+// 											<p>sign up </p>
+// 										</Link >
+// 									</div>
+// 								</form>
+// 							</div>
+// 						</div>
+// 					</div>
+
+// 					<div className="col-lg-6 mb-5 mb-lg-0">
+// 						<img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" className="w-100 rounded-4 shadow-4"
+// 							alt="" />
+// 					</div>
+// 				</div>
+// 			</div>
+// 		</section>
+// 	);
+// };
+
+// export default Login;
+
+
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import styles from "./styles.module.css";//login
+import styles from "./styles.module.css";
 
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
@@ -14,7 +107,7 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = `http://localhost:4000/api/auth`;
+			const url = `https://blogpost-yu02.onrender.com/api/auth`;
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("userId", res.data._id);
 			localStorage.setItem("token", res.data.token);
@@ -61,11 +154,11 @@ const Login = () => {
 					</form>
 				</div>
 				<div className={styles.right}>
-					<h1>New Here ?</h1>
+					<h1 style={{color:'black'}}>New Here ?</h1>
 					<Link to="/signup">
-						<button type="button" className={styles.white_btn}>
+						<h4 style={{color:'white'}}>
 							Sign Up
-						</button>
+						</h4>
 					</Link>
 				</div>
 			</div>
@@ -74,3 +167,6 @@ const Login = () => {
 };
 
 export default Login;
+
+
+

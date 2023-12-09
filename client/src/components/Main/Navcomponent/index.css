@@ -1,12 +1,14 @@
-body{margin-top:20px;}
+/* body{color: rgb(223, 148, 57);} */
 .blog-grid {
     position: relative;
     box-shadow: 0 1rem 1.75rem 0 rgba(45, 55, 75, 0.1);
     height: 100%;
-    border: 0.0625rem solid rgba(220, 224, 229, 0.6);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.6);
     border-radius: 0.25rem;
     transition: all .2s ease-in-out;
-    height: 100%
+    height: 100%;
+    background-color: white;
+    
 }
 
 .blog-grid span {

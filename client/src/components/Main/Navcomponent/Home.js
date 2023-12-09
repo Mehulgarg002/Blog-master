@@ -8,7 +8,7 @@ const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/userpost`)
+    axios.get(`https://blogpost-yu02.onrender.com/api/userpost`)
       .then((res) => setData(res.data.data));
   }, []);
 
@@ -70,3 +70,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

@@ -19,12 +19,12 @@ const Viewpost = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        return axios.get(`http://localhost:4000/api/id/${id}`)
+        return axios.get(`https://blogpost-yu02.onrender.com/api/id/${id}`)
             .then(res => setUser(res.data))
     });
 
     useEffect(() => {
-        return axios.post(`http://localhost:4000/api/id`, { id })
+        return axios.post(`https://blogpost-yu02.onrender.com/api/id`, { id })
             .then(res => setData(res.data.data))
     }, [id]);
 
@@ -35,22 +35,22 @@ const Viewpost = () => {
     const user = data.user
 
     const DeletePost = async () => {
-        let res = await axios.put(`http://localhost:4000/api/id`, { userid: id })
+        let res = await axios.put(`https://blogpost-yu02.onrender.com/api/id`, { userid: id })
         if (res.status === 201) {
             navigate('/')
         }
     }
     const Sendcomment = async () => {
         setComment('')
-        await axios.post(`http://localhost:4000/api/userpost/comment`, { comment, user: Id, post: id, date: moment().format('MMMM Do YYYY, h:mm:ss a'), })
+        await axios.post(`https://blogpost-yu02.onrender.com/api/userpost/comment`, { comment, user: Id, post: id, date: moment().format('MMMM Do YYYY, h:mm:ss a'), })
     }
 
     const DeleteComment = async (iD) => {
-        await axios.put(`http://localhost:4000/api/userpost/comment/${iD}`)
+        await axios.put(`https://blogpost-yu02.onrender.com/api/userpost/comment/${iD}`)
     }
 
     const updateBlog = async () => {
-        let res = await axios.put(`http://localhost:4000/api/userpost/update`, { userid: userId, data: values })
+        let res = await axios.put(`https://blogpost-yu02.onrender.com/api/userpost/update`, { userid: userId, data: values })
         if (res.status === 202) {
             window.location.reload()
             // navigate(`/viewpost/${userId}`)
@@ -73,11 +73,11 @@ const Viewpost = () => {
             <div id="main-content" className="blog-page">
                 <div className="container">
                     <div className="row clearfix">
-                        <div className="col-lg-12 col-md-12 left-box">
+                        <div className="col-lg-12 col-md-12 mt-4 left-box">
                             <div className="card single_post">
-                                <div className="body">
-                                    <div className="img-post" style={{textAlign:'center'}}>
-                                        <img className=" img-fluid" src={image} alt="First slide"  />
+                                <div className="body ">
+                                    <div className="img-post" style={{ textAlign: 'center' }}>
+                                        <img className=" img-fluid" src={image} alt="First slide" />
                                     </div>
                                     {
                                         user === Id ?
@@ -107,13 +107,15 @@ const Viewpost = () => {
                                                         alt={data.name}
                                                         height="90px"
                                                         style={{
-                                                            width: 90,
-                                                            borderRadius: '52px',
+                                                            width: '90px', // Set the width
+                                                            height: '90px', // Set the height
+                                                            objectFit: 'cover', // Maintain aspect ratio and crop if necessary
+                                                            borderRadius: '50%', // Circular border-radius for a thumbnail effect
                                                             background: '#fafafa',
                                                         }}
                                                     />
                                                 </div>
-                                                <div className="text-box col-md-10 mt-4 col-8 p-l-0 p-r-0">
+                                                <div className="text-box col-md-10 mt-2 col-8 p-l-0 p-r-0">
                                                     <h5 className="m-b-0">{data.name}</h5>
                                                     <p>
                                                         {data.comment}
@@ -135,21 +137,28 @@ const Viewpost = () => {
                             </div>
                             <div className="card">
                                 <div className="header">
-                                    <h2>Leave a comment </h2>
+                                    <h2>Leave a comment</h2>
                                 </div>
                                 <div className="body">
                                     <div className="comment-form">
-                                        <div className="col-sm-6">
-                                            <div className="form-group">
-                                                <textarea
-                                                    rows="4"
-                                                    value={comment}
-                                                    onChange={(e) => setComment(e.target.value)} // This line was added
-                                                    className="form-control no-resize mb-4"
-                                                    placeholder="Please type what you want..."
-                                                ></textarea>
+                                        <div className="row">
+                                            <div className="col-sm-12">
+                                                <div className="form-group">
+                                                    <textarea
+                                                        rows="4"
+                                                        value={comment}
+                                                        onChange={(e) => setComment(e.target.value)}
+                                                        className="form-control no-resize mb-4"
+                                                        style={{ borderRadius: '8px', resize: 'vertical' }}
+                                                        placeholder="Please type what you want..."
+                                                    ></textarea>
+                                                </div>
                                             </div>
-                                            <button onClick={() => Sendcomment()} className="btn btn-primary">SUBMIT</button>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-sm-12">
+                                                <button onClick={() => Sendcomment()} className="btn btn-primary">SUBMIT</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

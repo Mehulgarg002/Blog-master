@@ -16,12 +16,12 @@ const UserProfile = () => {
 
   console.log(data)
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/userpost/${id}`)
+    axios.get(`https://blogpost-yu02.onrender.com/api/userpost/${id}`)
       .then((res) => setData(res.data.data));
   }, [id]);
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/users/${id}`)
+    axios.get(`https://blogpost-yu02.onrender.com/api/users/${id}`)
       .then((res) => setUser(res.data.data));
   }, [id]);
 

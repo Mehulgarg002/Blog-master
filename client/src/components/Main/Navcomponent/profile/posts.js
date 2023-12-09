@@ -8,7 +8,7 @@ const Posts = () => {
     const id = localStorage.getItem('userId')
     const [data, setData] = useState([]);
     useEffect(() => {
-        return axios.get(`http://localhost:4000/api/userpost/${id}`)
+        return axios.get(`https://blogpost-yu02.onrender.com/api/userpost/${id}`)
             .then(res => setData(res.data.data))
     }, [id])
     return (

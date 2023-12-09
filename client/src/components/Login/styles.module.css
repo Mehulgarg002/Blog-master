@@ -1,3 +1,25 @@
+/* .cascading-right {
+	margin-right: -50px;
+}
+
+.error_msg {
+	width: 370px;
+	padding: 15px;
+	margin: 5px 0;
+	font-size: 14px;
+	background-color: #f34646;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+}
+
+
+@media (max-width: 991.98px) {
+	.cascading-right {
+		margin-right: 0;
+	}
+} */
+
 .login_container {
 	width: 100%;
 	min-height: 100vh;
@@ -83,7 +105,6 @@
 	border: none;
 	outline: none;
 	padding: 12px 0;
-	background-color: white;
 	border-radius: 20px;
 	width: 180px;
 	font-weight: bold;
@@ -95,4 +116,35 @@
 	background-color: #3bb19b;
 	color: white;
 	margin: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+	.login_form_container {
+		flex-direction: column;
+		height: auto;
+		width: 90%;
+		margin: 0 auto;
+	}
+	.left,
+	.right {
+		border-radius: 10px;
+	}
+	.left {
+		border-radius: 10px;
+		margin-bottom: 20px;
+	}
+	.right {
+		margin-top: 20px;
+	}
+	.input,
+	.error_msg,
+	.green_btn,
+	.white_btn {
+		width: 100%;
+		font-size: 16px;
+	}
+	.form_container h1 {
+		font-size: 28px;
+		margin-bottom: 20px;
+	}
 }
