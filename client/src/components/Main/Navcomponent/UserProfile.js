@@ -32,7 +32,7 @@ const UserProfile = () => {
         <div className="row">
           <div className="col-lg-12 mb-4 mb-sm-0 mt-6">
             <div className="card card-style1 border-0">
-              <div className="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+              <div className="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7" style={{overflow:'hidden'}}>
                 <div className="row align-items-center">
                   <div className="col-lg-6 mb-4 mb-lg-0">
                     <img
