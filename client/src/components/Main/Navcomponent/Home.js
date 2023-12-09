@@ -27,7 +27,7 @@ const Home = () => {
                       alt="img"
                       height="210px"
                       src={post.image}
-                      style={{ maxWidth: '35%' }}
+                      style={{ maxWidth: '100%' }}
                     />
                   </div>
                   <div className="blog-grid-text p-4">

@@ -38,6 +38,7 @@ const UserProfile = () => {
                     <img
                       src={user.image}
                       alt="..."
+                      style={{ maxWidth: '500px', maxHeight:'300px'}}
                     />
                   </div>
                   <div className="col-lg-6 px-xl-10">
@@ -76,7 +77,7 @@ const UserProfile = () => {
                       alt="img"
                       height="210px"
                       src={post.image}
-                      style={{ maxWidth: '40%' }}
+                      style={{ maxWidth: '100 %' }}
                     />
                   </div>
                   <div className="blog-grid-text p-4">

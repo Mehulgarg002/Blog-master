@@ -75,8 +75,9 @@ const Viewpost = () => {
                     <div className="row clearfix">
                         <div className="col-lg-12 col-md-12 mt-4 left-box">
                             <div className="card single_post">
+                                <h1 className='mt-5'style={{textAlign:'center'}}><i>{title}</i></h1>
                                 <div className="body ">
-                                    <div className="img-post" style={{ textAlign: 'center' }}>
+                                    <div className="img-post my-5 " style={{ textAlign: 'center' }}>
                                         <img className=" img-fluid" src={image} alt="First slide" />
                                     </div>
                                     {
@@ -88,8 +89,7 @@ const Viewpost = () => {
                                             :
                                             null
                                     }
-                                    <h3 className='mt-5'><a href="blog-details.html">{title}</a></h3>
-                                    <p className='mt-3'>{discription}</p>
+                                    <p className='mt-3' style={{color:'#000000'}}>{discription}</p>
                                 </div>
                             </div>
                             <div className="card">
